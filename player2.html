@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/beercss@3.7.10/dist/cdn/beer.min.css" rel="stylesheet">
+    <style>
+        /* Sobreescribir el slider de Beer.css */
+.slider input[type="range"] {
+    width: 100%; /* Tamaño ajustable del slider */    
+    border-radius: 5px; /* Bordes redondeados */
+    background: transparent; /* Fondo transparente para eliminar el color predeterminado */
+    transition: background 0.3s ease;
+    position: relative;
+    z-index: 2; /* Asegurarnos de que este slider esté arriba */
+}
+
+.slider input[type="range"]::-webkit-slider-runnable-track {
+    background: rgb(177, 75, 95); /* Color degradado */
+    height: 12px; /* Grosor del fondo */
+    border-radius: 5px;
+}
+
+.slider input[type="range"]::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 12px;  /* Tamaño del círculo */
+    height: 12px; /* Tamaño del círculo */
+    border-radius: 50%;
+    background-color: #fcfcfc; /* Color del círculo */
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    position: relative;
+    z-index: 3; /* Para asegurarse de que esté por encima del track */
+}
+
+.slider input[type="range"]:hover::-webkit-slider-thumb {
+    background: rgb(243, 174, 188);
+}
+/* Ocultar el estilo de fondo de Beer.css */
+.slider span {
+    display: none;
+}
+
+    </style>
+    <title>Document</title>
+</head>
+
+<body class="dark">
+
+     <!--Lo del sidebar en PC-->
+     <nav class="left m scroll">
+        <header><img class="circle" src="KodigoMusic2.jpg"/></header>
+          <a><i>home</i><label>Início</label></a>
+          <a><i>explore</i><label>Explora</label></a>
+          <a><i>Category</i><label>Categorias</label></a>
+          <a><i>login</i><label>Ingresa</label></a>
+          <a><i>person</i><label>Crea tu cuenta</label></a>
+        
+      </nav>
+      <!--Menu para cel-->
+      <nav class="bottom s">
+          <a><i>home</i><label>Início</label></a>
+          <a><i>explore</i><label>Explora</label></a>
+          <a><i>Category</i><label>Categorias</label></a>
+          <a><i>login</i><label>Ingresa</label></a>
+          <a><i>person</i><label>Crea tu cuenta</label></a>
+      </nav>
+
+
+      </header>
+      
+    <main class="responsive max">
+        <div class="s12 m6 l6 padding">
+            <article class="round no-padding blur no-elevate page active left"><img class="responsive medium-height top-round" src="chloe.jpg"/>
+              <div class="large-padding">
+                <div class="small-space"></div>
+                <nav class="slider-container">
+                    
+                        <p>3:00</p>
+                        <label class="slider">
+                          <input type="range">
+                          <span></span>
+                        </label>
+                        <p>5:00</p>
+                    
+                </nav>
+                <div class="small-space"></div>
+                
+                
+                <nav class="padding center-align">
+                  <button class="transparent  small"><i>shuffle</i></button>
+                  <button class="transparent circle large"><i>skip_previous</i></button>
+                  <button class="fill extra" onclick="updateColors('#2e5c20')"" ><i>play_arrow</i></button>
+                  <button class="transparent circle large"><i>skip_next</i></button>
+                  <button class="transparent small"><i>repeat</i></button>
+                </nav>
+
+                
+                    
+
+                    <a class="row no-padding round">
+                        <img class=" circle extra" src="chloe.jpg">
+                        <div class="max">
+                          <h6 class="small">Buttercup</h6>
+                          <p> Chloe Moriondo
+                          
+                        
+                        
+                          
+                          </p>
+                          
+                        </div>
+                        <div class="center-align"></div>                        
+                        
+                        <label class="padding">5 min</label>
+                        <label class="checkbox icon">
+                            <input type="checkbox">
+                            <span>
+                              <i>
+                                favorite
+                              </i>
+                              <i>
+                                <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#CEA8BC"><path d="m480-120-58-52q-101-91-167-157T150-447.5Q111-500 95.5-544T80-634q0-94 63-157t157-63q52 0 99 22t81 62q34-40 81-62t99-22q94 0 157 63t63 157q0 46-15.5 90T810-447.5Q771-395 705-329T538-172l-58 52Z"/></svg>
+                              </i>
+                            </span>
+                          </label>
+                      </a>
+
+
+                    
+                
+                <div class="large-space"></div>
+                <p>You may like</p>
+                <article class="medium-height scroll surface">
+                <div class="small-space"></div>
+                <a class="row no-padding surface-container round surface-container-highest ">
+                    <img class=" circle large" src="chloe2.jpg">
+                    <div class="max">
+                      <h6 class="small">Joji slow dancing in the dark</h6>
+                      <div>Chloe Moriondo</div>
+                    </div>
+                    <label class="padding">5 min</label>
+                  </a>
+                  <div class="small-space"></div>
+                  <hr><div class="small-space"></div>
+                  <a class="row no-padding surface-container round surface-container-highest ">
+                      <img class=" circle large" src="chloe2.jpg">
+                      <div class="max">
+                        <h6 class="small">Joji slow dancing in the dark</h6>
+                        <div>Chloe Moriondo</div>
+                      </div>
+                      <label class="padding">5 min</label>
+                    </a>
+                    <div class="small-space"></div>
+                    <hr>
+                    <div class="small-space"></div>
+                <a class="row no-padding surface-container round surface-container-highest ">
+                    <img class=" circle large" src="chloe2.jpg">
+                    <div class="max">
+                      <h6 class="small">Joji slow dancing in the dark</h6>
+                      <div>Chloe Moriondo</div>
+                    </div>
+                    <label class="padding">5 min</label>
+                  </a>
+                  <div class="small-space"></div>
+                  <hr>
+                  <div class="small-space"></div>
+                <a class="row no-padding surface-container round surface-container-highest ">
+                    <img class=" circle large" src="chloe2.jpg">
+                    <div class="max">
+                      <h6 class="small">Joji slow dancing in the dark</h6>
+                      <div>Chloe Moriondo</div>
+                    </div>
+                    <label class="padding">5 min</label>
+                  </a>
+                  <div class="small-space"></div>
+                  <hr>
+                  <div class="small-space"></div>
+                <a class="row no-padding surface-container round surface-container-highest ">
+                    <img class=" circle large" src="chloe2.jpg">
+                    <div class="max">
+                      <h6 class="small">Joji slow dancing in the dark</h6>
+                      <div>Chloe Moriondo</div>
+                    </div>
+                    <label class="padding">5 min</label>
+                  </a>
+                  <div class="small-space"></div>
+                  <hr>
+                  <div class="small-space"></div>
+
+                <a class="row no-padding surface-container round surface-container-highest ">
+                    <img class=" circle large" src="chloe2.jpg">
+                    <div class="max">
+                      <h6 class="small">Joji slow dancing in the dark</h6>
+                      <div>Chloe Moriondo</div>
+                    </div>
+                    <label class="padding">5 min</label>
+                  </a>
+                  <div class="small-space"></div>
+                  <hr>
+                </article>
+                
+
+
+              </div>
+            </article>
+        </div>
+    </main>
+
+    
+  
+  <script src="papas.js"></script>
+</body>
+
+</html>

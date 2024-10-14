@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/beercss@3.7.10/dist/cdn/beer.min.css" rel="stylesheet">
+    <title>Document</title>
+</head>
+
+<body class="dark">
+
+     <!--Lo del sidebar en PC-->
+     <nav class="left m scroll">
+        <header><img class="circle" src="KodigoMusic2.jpg"/></header>
+          <a><i>home</i><label>Início</label></a>
+          <a><i>explore</i><label>Explora</label></a>
+          <a><i>Category</i><label>Categorias</label></a>
+          <a><i>login</i><label>Ingresa</label></a>
+          <a><i>person</i><label>Crea tu cuenta</label></a>
+        
+      </nav>
+      <!--Menu para cel-->
+      <nav class="bottom s">
+          <a><i>home</i><label>Início</label></a>
+          <a><i>explore</i><label>Explora</label></a>
+          <a><i>Category</i><label>Categorias</label></a>
+          <a><i>login</i><label>Ingresa</label></a>
+          <a><i>person</i><label>Crea tu cuenta</label></a>
+      </nav>
+
+
+      </header>
+    
+
+    <div class="top-shadow" id="app">
+      <link rel="preload" as="image" href="https://www.beercss.com/classic-utility-jacket.jpg"/>
+      <link rel="preload" as="image" href="https://www.beercss.com/kids-jumpsuit.jpg"/>
+      <link rel="preload" as="image" href="https://www.beercss.com/dogtooth-style-jacket.jpg"/>
+      <link rel="preload" as="image" href="https://www.beercss.com/retro-shoe.jpg"/>
+      <header class="fixed padding white-text top-shadow">
+        <nav>
+          <div class="max">
+            <div class="s">
+              <h6 class="bold page active right s">pp</h6>
+            </div>
+            <div class="m l">
+              <h2 class="bold active right ">pp</h2>
+            </div>
+          </div>          
+        </nav>
+      </header>
+      <div class="fixed top right bottom left back no-events" id="background"><img class="responsive page active bottom wallpaper"/></div>
+      <main class="responsive">
+        <div class="grid">
+          <div class="s12 m6 l6 m l">
+            <article class="round no-padding blur no-elevate page active left"><img class="responsive medium-height top-round wallpaper"/>
+              <div class="medium-space"></div>
+              <div class="large-padding">
+                <div class="medium-space"></div>
+                <nav>
+                  <label class="slider">
+                    <input v-model="data.time" type="range"/><span></span>
+                    <div class="tooltip"></div>
+                  </label>
+                </nav>
+                <div class="medium-space"></div>
+                <nav class="center-align">
+                  <button class="transparent circle large"><i>skip_previous</i></button>
+                  <button class="fill extra"><i>play_arrow</i></button>
+                  <button class="transparent circle large"><i>skip_next</i></button>
+                </nav>
+              </div>
+            </article>
+          </div>
+          <div class="s12 m6 l6 m l">
+            <article class="round large-padding blur no-elevate page active top">
+              <div class="grid">
+                <div class="s12 m6"><a class="row round medium-height"><img class="responsive" src="https://www.beercss.com/classic-utility-jacket.jpg" onclick="updateTheme()"/></a>
+                  <div class="space"></div><a class="row round small-height"><img class="responsive" src="https://www.beercss.com/kids-jumpsuit.jpg" onclick="updateTheme('https://www.beercss.com/kids-jumpsuit.jpg', 'Kids Jumpsuit', '#a2d669')"/></a>
+                </div>
+                <div class="s12 m6"><a class="row round small-height"><img class="responsive" src="https://www.beercss.com/dogtooth-style-jacket.jpg" onclick="updateTheme('https://www.beercss.com/dogtooth-style-jacket.jpg', 'Dogtooth Style Jacket', '#5ad5f9')"/></a>
+                  <div class="space"></div><a class="row round medium-height"><img class="responsive" src="https://www.beercss.com/retro-shoe.jpg" onclick="updateTheme('https://www.beercss.com/retro-shoe.jpg', 'Retro Shoe', '#dcb8ff')"/></a>
+                </div>
+              </div>
+            </article>
+          </div>
+          <div class="s12 s">
+            <div class="space"></div>
+            <article class="round large-padding blur no-elevate page active left">
+              <label class="slider">
+                <input v-model="data.time" type="range"/><span></span>
+                <div class="tooltip"></div>
+              </label>
+              <div class="space"></div>
+              <nav><img class="large round wallpaper"/>
+                <div class="max">
+                  <nav class="center-align">
+                    <button class="transparent circle large"><i>skip_previous</i></button>
+                    <button class="fill extra"><i>play_arrow</i></button>
+                    <button class="transparent circle large"><i>skip_next</i></button>
+                  </nav>
+                </div>
+              </nav>
+            </article>
+          </div>
+          <div class="s12 s">
+            <article class="round large-padding blur no-elevate page active right">
+              <nav class="scroll">
+                <div class="small-height small-width round"><img class="responsive" src="https://www.beercss.com/classic-utility-jacket.jpg" onclick="updateTheme('', '')"/></div>
+                <div class="small-height small-width round"><img class="responsive" src="https://www.beercss.com/kids-jumpsuit.jpg" onclick="updateTheme('https://www.beercss.com/kids-jumpsuit.jpg', 'Kids Jumpsuit', '#a2d669')"/></div>
+                <div class="small-height small-width round"><img class="responsive" src="https://www.beercss.com/dogtooth-style-jacket.jpg" onclick="updateTheme('https://www.beercss.com/dogtooth-style-jacket.jpg', 'Dogtooth Style Jacket', '#5ad5f9')"/></div>
+                <div class="small-height small-width round"><img class="responsive" src="https://www.beercss.com/retro-shoe.jpg" onclick="updateTheme('https://www.beercss.com/retro-shoe.jpg', 'Retro Shoe', '#dcb8ff')"/></div>
+              </nav>
+            </article>
+          </div>
+        </div>
+      </main>
+    </div>
+
+    
+  <script src="player.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/beercss@3.7.10/dist/cdn/beer.min.css" rel="stylesheet">
+    <title>Crear Cuenta</title>
+    <style>
+        .toggle-visibility {
+            cursor: pointer;
+            display: inline-block;
+            margin-left: -30px; /* Ajusta según sea necesario */
+        }
+        /* Para centrar el contenido */
+        main {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            padding: 20px;
+        }
+        /* Mejora del botón */
+        button {
+            background-color: #4fd8ea;
+            color: white;
+            border-radius: 50px;
+            padding: 10px 30px;
+            font-size: 1.2rem;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+        button:hover {
+            background-color: #39a0c8;
+        }
+        /* Mejora de los campos */
+        .field {
+            margin-bottom: 15px;
+        }
+    </style>
+</head>
+
+<body class="dark">
+
+    <nav class="bottom">
+        <a>
+            <i>home</i>
+            <div>Home</div>
+        </a>
+        <a>
+            <i>login</i>
+            <div>Ingresar</div>
+        </a>
+    </nav>
+
+    <main class="responsive">
+        <article class="large padding center-align border">
+            <div class="padding">
+                <h2>Cree su cuenta</h2>
+
+                <div class="field label prefix border round fill large">
+                    <i>id_card</i>
+                    <input type="text">
+                    <label>Digite sus nombres</label>
+                </div>
+                <div class="field label prefix border round fill large">
+                    <i>id_card</i>
+                    <input type="text">
+                    <label>Digite sus apellidos</label>
+                </div>
+
+                <div class="field label prefix border round fill large">
+                    <i class="toggle-visibility" onclick="togglePassword('password')">visibility</i>
+                    <input type="password" id="password">
+                    <label>Digite su clave de acceso</label>
+                </div>
+
+                <div class="field label prefix border round fill large">
+                    <i class="toggle-visibility" onclick="togglePassword('confirm-password')">visibility </i>
+                    <input type="password" id="confirm-password">
+                    <label>Confirme su clave de acceso</label>
+                </div>
+
+                <nav class="center-align">
+                    <button>Crear cuenta</button>
+                </nav>
+            </div>
+        </article>
+    </main>
+
+    <script type="module" src="https://cdn.jsdelivr.net/npm/beercss@3.7.10/dist/cdn/beer.min.js"></script>
+    <script type="module" src="https://cdn.jsdelivr.net/npm/material-dynamic-colors@1.1.2/dist/cdn/material-dynamic-colors.min.js"></script>
+    <script>
+        function togglePassword(inputId) {
+            const input = document.getElementById(inputId);
+            const type = input.type === "password" ? "text" : "password";
+            input.type = type;
+        }
+    </script>
+</body>
+
+</html>

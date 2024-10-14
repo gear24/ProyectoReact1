@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/beercss@3.7.10/dist/cdn/beer.min.css" rel="stylesheet">
+
+    <title>Document</title>
+</head>
+
+<body class="dark">
+        <!--Lo del sidebar en PC-->
+        <nav class="left m scroll">
+          <header><img class="circle" src="KodigoMusic2.jpg"/></header>
+            <a><i>home</i><label>Início</label></a>
+            <a><i>explore</i><label>Explora</label></a>
+            <a><i>Category</i><label>Categorias</label></a>
+            <a><i>login</i><label>Ingresa</label></a>
+            <a><i>person</i><label>Crea tu cuenta</label></a>
+          
+        </nav>
+        <!--Menu para cel-->
+        <nav class="bottom s">
+            <a><i>home</i><label>Início</label></a>
+            <a><i>explore</i><label>Explora</label></a>
+            <a><i>Category</i><label>Categorias</label></a>
+            <a><i>login</i><label>Ingresa</label></a>
+            <a><i>person</i><label>Crea tu cuenta</label></a>
+        </nav>
+
+        <!--Buscador con coso para buscar, toggle para claro y chips-->
+        <header class="fixed responsive max surface">
+          <nav>
+            <div class="field prefix fill round max"><i>search</i>
+              <input type="search"/>
+            </div>
+            <button class="transparent circle" onclick="updateTheme()"><i id="dark" style="display: none">light_mode</i><i id="light">dark_mode</i></button>
+            <button class="transparent circle m l" onclick="refresh()"><i>refresh</i></button>
+          </nav>
+          <nav class="no-margin scroll">
+            <button class="chip fill">Rock</button>
+            <button class="chip fill">Pop</button>
+            <button class="chip fill">Maneskin</button>
+            <button class="chip fill">Bad Bunny</button>
+            <button class="chip fill">Zoe</button>
+          </nav>
+        </header>
+
+        <!--Cuerpo con las tarjetas-->
+        <main class="responsive max">
+          <div class="page right active">
+            <div class="grid large-space">
+              <div class="s12 l6">
+                <article class="no-padding round wave no-elevate" onclick="updateColors('#4fd8ea')"><img class="responsive medium-height" src="song2.jpg">
+                    <div class="row"><i>globe</i>
+                      <div class="max truncate">
+                        <h6>Nevermind - Nirvana</h6>
+                        <div class="row no-margin">                          
+                          <label>100 M<i>visibility</i></label>
+                          <label>10.1 MB</label>
+                          <label>31/10/2023</label>
+                        </div>
+                      </div>
+                    </div>
+                  </article>
+                  </div>        
+              
+              
+              <div class="s12 l6">
+                <article class="no-padding round wave no-elevate" onclick="updateColors('#e32f2f')"><img class="responsive medium-height" src="chloe.jpg">
+                    <div class="row"><i>favorite</i>
+                      <div class="max truncate">
+                        <h6>Buttercup - Chloe Moriondo</h6>
+                        <div class="row no-margin">                          
+                          <label>100 M<i>visibility</i></label>
+                          <label>10.1 MB</label>
+                          <label>31/10/2023</label>
+                        </div>
+                      </div>
+                    </div>
+                  </article>
+                  </div>                
+              </div>
+            </div>
+
+            
+          
+          <div class="space"></div>
+          <div class="grid large-space">
+            <div class="s12 m6 l4">
+              <article class="no-padding round wave no-elevate" onclick="updateColors('#cdb598')"><img class="responsive small-height" src="song1.jpg"/>
+                <div class="absolute left right bottom bottom-shadow padding white-text">
+                  <div class="row"><i>play_arrow</i>
+                    <div class="max truncate">
+                      <h6>Y si veo tu mamá</h6>
+                      <div class="row no-margin">
+                        <label>100 M<i>visibility</i></label>
+                        <label>10.1 MB</label>
+                        <label>31/10/2023</label>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </article>
+            </div>
+            <div class="s12 m6 l4">
+              <article class="no-padding round wave no-elevate" onclick="updateColors('#6c3333')"><img class="responsive small-height" src="song3.jpg"/>
+                <div class="absolute left right bottom bottom-shadow padding white-text">
+                  <div class="row"><i>music_note</i>
+                    <div class="max truncate">
+                      <h6>Zoe - Sombras</h6>
+                      <div class="row no-margin">
+                        <label>100 M<i>visibility</i></label>
+                        <label>10.1 MB</label>
+                        <label>31/10/2023</label>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </article>
+            </div>
+            <div class="s12 m6 l4">
+              <article class="no-padding round wave no-elevate" onclick="updateColors('#523866')"><img class="responsive small-height" src="song4.jpg"/>
+                <div class="absolute left right bottom bottom-shadow padding white-text">
+                  <div class="row"><i>skull</i>
+                    <div class="max truncate">
+                      <h6>Paparazzi</h6>
+                      <div class="row no-margin">
+                        <label>100 M<i>visibility</i></label>
+                        <label>10.1 MB</label>
+                        <label>31/10/2023</label>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </article>
+            </div>
+            <div class="s12 m6 l4">
+              <article class="no-padding round wave no-elevate" onclick="updateColors('#181212')"><img class="responsive small-height" src="song5.jpg"/>
+                <div class="absolute left right bottom bottom-shadow padding white-text">
+                  <div class="row"><i>boy</i>
+                    <div class="max truncate">
+                      <h6>It's boy</h6>
+                      <div class="row no-margin">
+                        <label>100 M<i>visibility</i></label>
+                        <label>10.1 MB</label>
+                        <label>31/10/2023</label>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </article>
+            </div>
+            <div class="s12 m6 l4">
+              <article class="no-padding round wave no-elevate" onclick="updateColors('#395646')"><img class="responsive small-height" src="blablabla.jpg"/>
+                <div class="absolute left right bottom bottom-shadow padding white-text">
+                  <div class="row"><i>star</i>
+                    <div class="max truncate">
+                      <h6>Bla bla bla</h6>
+                      <div class="row no-margin">
+                        <label>100 M<i>visibility</i></label>
+                        <label>10.1 MB</label>
+                        <label>31/10/2023</label>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </article>
+            </div>
+            <div class="s12 m6 l4">
+              <article class="no-padding round wave no-elevate" onclick="updateColors('#2e5c20')"><img class="responsive small-height" src="song6.jpg"/>
+                <div class="absolute left right bottom bottom-shadow padding white-text">
+                  <div class="row"><i>skeleton</i>
+                    <div class="max truncate">
+                      <h6>Engravings</h6>
+                      <div class="row no-margin">
+                        <label>100 M<i>visibility</i></label>
+                        <label>10.1 MB</label>
+                        <label>31/10/2023</label>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </article>
+            </div>
+            <div class="s12 m6 l4">
+              <article class="no-padding round wave no-elevate" onclick="updateColors('#8c322c')"><img class="responsive small-height" src="chloe2.jpg"/>
+                <div class="absolute left right bottom bottom-shadow padding white-text">
+                  <div class="row"><i>favorite</i>
+                    <div class="max truncate">
+                      <h6>Slow dancing in the dark</h6>
+                      <div class="row no-margin">
+                        <label>100 M<i>visibility</i></label>
+                        <label>10.1 MB</label>
+                        <label>31/10/2023</label>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </article>
+            </div>
+            <br>
+          </div>
+        </main>
+      
+
+
+
+    <script type="module" src="https://cdn.jsdelivr.net/npm/beercss@3.7.10/dist/cdn/beer.min.js"></script>
+    <script type="module"
+        src="https://cdn.jsdelivr.net/npm/material-dynamic-colors@1.1.2/dist/cdn/material-dynamic-colors.min.js"></script>
+    <script src="papas.js"></script>
+</body>
+
+</html>
