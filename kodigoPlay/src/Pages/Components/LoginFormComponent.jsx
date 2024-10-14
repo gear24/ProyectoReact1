@@ -1,7 +1,9 @@
 import { getAuth, signInWithEmailAndPassword } from "firebase/auth";
 import { useForm } from 'react-hook-form';
 import Button from "../../MicroComponents/Button";
-import InputFieldWithIcon from "../../MicroComponents/InputFieldWithIcon"; // Asegúrate de importar esto
+import InputFieldWithIcon from "../../MicroComponents/InputFieldWithIcon";
+import MainContainer from  "../../MicroComponents/MainContainer";
+import styles from "../../assets/CSS/LoginFormComponent.module.css"
 import { auth } from "../../Firebase/Config";
 import { useNavigate } from 'react-router-dom';
 import { useContext } from "react";
@@ -29,9 +31,9 @@ export const LoginFormComponent = () => {
     };
 
     return (
-        <>
-            <div>Login Form</div>
-            <div>
+        <>  
+                
+                <article class="large padding center-align border">
                 <form onSubmit={handleSubmit(onSubmit)}>                    
                     <InputFieldWithIcon 
                         label="Digite su correo"                        
@@ -47,9 +49,10 @@ export const LoginFormComponent = () => {
                         icon="visibility"
                         register={register}
                     />
-                    <Button label="Ingresar" className="primary" type="submit" />
+                    <Button label="Ingresar" className={styles.buttonLogin} type="submit" />
                 </form>
-            </div>
+                </article>
+            
         </>
     );
 };
