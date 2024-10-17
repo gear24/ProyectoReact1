@@ -1,6 +1,9 @@
 import { useForm } from 'react-hook-form';
 import { getAuth, createUserWithEmailAndPassword } from "firebase/auth";
 import { auth,app } from '../../Firebase/Config';
+import Button from "../../MicroComponents/Button";
+import InputFieldWithIcon from "../../MicroComponents/InputFieldWithIcon";
+import styles from "../../assets/CSS/LoginFormComponent.module.css";
 
 
 
@@ -34,18 +37,35 @@ export const RegisterFormComponent = () => {
     }
     return (
         <>
-            <div>
-                <form onSubmit={handleSubmit(onsubmitForm)}>
-                    <label>Email</label>
-                    <input type="text" id="email" placeholder="example@mail.com" {...register('email')} />
-                    <label>Password</label>
-                    <input type="text" id="password" placeholder="Enter u r password" {...register('password')} />
-                    <label>Confirm your password</label>
-                    <input type="text" id="password2" placeholder="Confirm password" {...register('password2')} />
-                    <button type="submit">Login</button>
-                </form>
-            </div>
-        </>
+        
+                <article className="large padding center-align border">
+                    <form onSubmit={handleSubmit(onsubmitForm)}>               
+                        <InputFieldWithIcon 
+                            label="Digite su correo"                        
+                            id="email" 
+                            type="email"
+                            icon="id_card"
+                            register={register}
+                        />                
+                        <InputFieldWithIcon
+                            label="Digite su clave de acceso"
+                            id="password"
+                            type="password"
+                            icon="visibility"
+                            register={register}
+                        />
+
+                        <InputFieldWithIcon
+                            label="Confirme su clave de acceso"
+                            id="password2"
+                            type="password"
+                            icon="visibility"
+                            register={register}
+                        />
+                        <Button label="Crear cuenta" className={styles.buttonLogin} type="submit" />
+                    </form>
+                </article>
+            </>
     )
 }
 
