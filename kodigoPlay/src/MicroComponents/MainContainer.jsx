@@ -1,5 +1,5 @@
 import KodigoMusic2 from "../assets/img/KodigoMusic2.jpg";
-import { useState, useContext, useEffect } from 'react';
+import { useState, useContext } from 'react';
 import { RegisterFormComponent } from '../Pages/Components/RegisterLoginFormComponent';
 import { LoginFormComponent } from '../Pages/Components/LoginFormComponent';
 import { UserContext } from '../Context/UserDataContext';
@@ -12,17 +12,6 @@ const MainContainer = ({ children }) => {
   const { user, setUser } = useContext(UserContext);
   const navigate = useNavigate();
 
-    // Redireccionar a home si el usuario se loguea
-    
-    useEffect(() => {
-        if (user) {
-
-            console.log("User changed:", user); // Esto te ayudará a ver cuándo cambia el usuario
-            navigate("/"); // Redirigir a la página de inicio
-        }
-      }, [user, navigate]); // Solo se ejecuta cuando 'user' cambia
-    
-
   // Función para cerrar sesión
   const logout = () => {
     signOut(auth).then(() => {
@@ -34,16 +23,15 @@ const MainContainer = ({ children }) => {
   };
 
   const goHome = () => {
-    console.log(user?user.email:'b');
     setTypeForm(null); // Limpiar el formulario al ir a Home
     navigate("/");
   };
 
   return (
-    <>
-      <main className="responsive">
+    
+      <div className="responsive max">
 
-        <nav className="left scroll">
+        <nav className="left l m scroll">
           <header><img className="circle" src={KodigoMusic2} alt="Kodigo Music" /></header>
 
           <a href="#" onClick={(e) => { e.preventDefault(); goHome(); }}><i>home</i><label>Início</label></a>
@@ -71,16 +59,9 @@ const MainContainer = ({ children }) => {
         {!user && typeForm === "signup" && <RegisterFormComponent />}
 
         {/* Mostrar el contenido solo si NO se ha seleccionado un formulario */}
-        {/* {!typeForm && children} */}
-        {user ? (
-                children // Solo mostrar el contenido si el usuario está autenticado
-            ) : (
+        {!typeForm && children}
+      </div>
 
-                !typeForm && children // Muestra el contenido si NO estás logueado y NO hay formulario activo
-
-            )}
-      </main>
-    </>
   );
 };
 
