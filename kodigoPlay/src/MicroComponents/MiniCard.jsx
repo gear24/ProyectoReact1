@@ -3,12 +3,13 @@ import { useNavigate } from 'react-router-dom';
 
 const MiniCard = ({ image, title, artist,duration, visibility, size, date, color, icon, updateColors, redirectTo }) => {
 
-    const navigate = useNavigate(); // Crea la instancia
+    const navigate = useNavigate(); // esto es una instancia pa la navegacion
 
     const handleClick = () => {
         updateColors(color); // pa cambiar colores bonitos
         console.log("si se fue");
-        navigate(redirectTo, { state: { selectedSong: { image, title, artist, duration } } }); // Pasar la canción con datos predeterminados o reales
+        navigate(redirectTo, { state: { selectedSong: { image, title, artist, duration } } }); 
+        //pasar la info de la song
 
 
         

@@ -6,8 +6,9 @@ const BigCard = ({ image, title, visibility, size, date, color,updateColors, red
     const navigate = useNavigate();
     
     const handleClick = () => {
-        updateColors(color); // Asegúrate de tener esta función definida en el componente padre o pasarla como prop
-        navigate(redirectTo, { state: { selectedSong: { image, title, artist, duration } } }); // Pasar la canción con datos predeterminados o reales
+        updateColors(color); //funcion de beer
+        navigate(redirectTo, { state: { selectedSong: { image, title, artist, duration } } }); 
+        // mandar los datos de las songs
     };
 
     return (

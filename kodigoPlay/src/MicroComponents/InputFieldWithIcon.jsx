@@ -1,4 +1,3 @@
-// src/MicroComponents/InputFieldWithIcon.jsx
 import { useState } from "react";
 
 const InputFieldWithIcon = ({ label, type = "text", icon, id, register }) => {

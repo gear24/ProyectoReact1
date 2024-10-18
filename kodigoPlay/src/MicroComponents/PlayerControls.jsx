@@ -1,8 +1,5 @@
 import React from 'react';
 
-// Importar imagen
-import chloe from "../assets/img/chloe.jpg";
-
 const PlayerControls = ({ image, title, artist, duration }) => {
     return (
         <div className="player-controls">

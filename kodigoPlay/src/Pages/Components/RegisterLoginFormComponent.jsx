@@ -29,6 +29,7 @@ export const RegisterFormComponent = () => {
 
     return (
         <article className="large padding center-align border">
+            <h1>¿Nuevo por acá? ¡Crea tu cuenta!</h1>
             <form onSubmit={handleSubmit(onsubmitForm)}>
                 <InputFieldWithIcon 
                     label="Digite su correo"                        

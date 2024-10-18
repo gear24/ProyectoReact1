@@ -16,9 +16,9 @@ export const LoginFormComponent = () => {
         signInWithEmailAndPassword(auth, data.email, data.password)
             .then((userCredential) => {
                 const user = userCredential.user;
-                setUser(user); // Actualiza el contexto del usuario
+                setUser(user); // update pal contexto
                 alert("Inicio de sesión con éxito");
-                // No redirigir aquí
+                // si pones la redireccion aca da problema
             })
             .catch((error) => {
                 console.error(error);
@@ -28,7 +28,9 @@ export const LoginFormComponent = () => {
 
     return (
         <>  
+        
             <article className="large padding center-align border">
+            <h1>¡Bienvenido de vuelta!, inicia sesión</h1>
                 <form onSubmit={handleSubmit(onSubmit)}>                    
                     <InputFieldWithIcon 
                         label="Digite su correo"                        

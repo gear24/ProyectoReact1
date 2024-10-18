@@ -155,6 +155,7 @@ export const Home = () => {
             icon: "star"
         }
     ];
+    //Puede que sea una mala practica pero solo necesito 2
     const buttercup = songs.find(song => song.title === "Buttercup");
     const Nevermind = songs.find(song => song.title === "Nevermind");
 
@@ -184,7 +185,7 @@ export const Home = () => {
                                 redirectTo={'/player'} 
                                 artist={buttercup.artist}
                                 duration={buttercup.duration}
-                                // Otras propiedades según sea necesario
+                                
                             />
                         )}
                     {Nevermind && (
@@ -199,7 +200,7 @@ export const Home = () => {
                                 redirectTo={'/player'} 
                                 artist={Nevermind.artist}
                                 duration={Nevermind.duration}
-                                // Otras propiedades según sea necesario
+                                
                             />
                         )}
                     </div>
