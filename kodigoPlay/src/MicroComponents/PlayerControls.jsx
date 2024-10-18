@@ -3,22 +3,22 @@ import React from 'react';
 // Importar imagen
 import chloe from "../assets/img/chloe.jpg";
 
-const PlayerControls = () => {
+const PlayerControls = ({ image, title, artist, duration }) => {
     return (
         <div className="player-controls">
             {/* Imagen del reproductor */}
-            <img className="responsive medium-height top-round" src={chloe} alt="Chloe Moriondo" />
+            <img className="responsive medium-height top-round" src={image} alt={title} />
 
             <div className="small-space"></div>
             
             {/* Controles de tiempo */}
             <nav className="slider-container">
-                <p>3:00</p>
+                <p>0:00</p>
                 <label className="slider">
                     <input type="range" />
                     <span></span>
                 </label>
-                <p>5:00</p>
+                <p>{duration}</p>
             </nav>
             <div className="small-space"></div>
 
@@ -33,13 +33,13 @@ const PlayerControls = () => {
 
             {/* Información de la canción */}
             <a className="row no-padding round">
-                <img className="circle extra" src={chloe} alt="Chloe Moriondo" />
+                <img className="circle extra" src={image} alt={title} />
                 <div className="max">
-                    <h6 className="small">Buttercup</h6>
-                    <p>Chloe Moriondo</p>
+                    <h6 className="small">{title}</h6>
+                    <p>{artist}</p>
                 </div>
                 <div className="center-align"></div>
-                <label className="padding">5 min</label>
+                <label className="padding">{duration}</label>
                 <label className="checkbox icon">
                     <input type="checkbox" />
                     <span>

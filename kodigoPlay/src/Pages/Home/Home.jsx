@@ -54,17 +54,110 @@ export const Home = () => {
         }, 180);
     };
 
-
     const songs = [
-        { image: chloe, title: "Buttercup - Chloe Moriondo", color: '#e32f2f', size: "10.1 MB", date: "31/10/2023", visibility: "100 M", icon: "favorite" },
-        { image: song1, title: 'Y si veo tu mamá', color: '#cdb598', size: '10.1 MB', date: '31/10/2023', visibility: '100 M', icon: 'play_arrow' },
-        { image: song3, title: 'Zoe - Sombras', color: '#6c3333', size: '10.1 MB', date: '31/10/2023', visibility: '100 M', icon: 'music_note' },
-        { image: song4, title: 'Paparazzi', color: '#523866', size: '10.1 MB', date: '31/10/2023', visibility: '100 M', icon: 'skull' },
-        { image: song5, title: "It's boy", color: '#181212', size: '10.1 MB', date: '31/10/2023', visibility: '100 M', icon: 'boy' },
-        { image: blablabla, title: 'Bla bla bla', color: '#395646', size: '10.1 MB', date: '31/10/2023', visibility: '100 M', icon: 'star' },
-        { image: song6, title: 'Engravings', color: '#2e5c20', size: '10.1 MB', date: '31/10/2023', visibility: '100 M', icon: 'skeleton' },
-        { image: chloe2, title: 'Slow dancing in the dark', color: '#8c322c', size: '10.1 MB', date: '31/10/2023', visibility: '100 M', icon: 'favorite' },
+        {
+            title: "Slow Dancing in the Dark",
+            artist: "Chloe Moriondo",
+            image: chloe2,
+            duration: "5 min",
+            color: '#8c322c',
+            size: "10.1 MB",
+            date: "31/10/2023",
+            visibility: "100 M",
+            icon: "favorite"
+        },
+        {
+            title: "Buttercup",
+            artist: "Chloe Moriondo",
+            image: chloe,
+            duration: "4 min",
+            color: '#e32f2f',
+            size: "10.1 MB",
+            date: "31/10/2023",
+            visibility: "100 M",
+            icon: "favorite"
+        },
+        {
+            title: "Y si veo tu mamá",
+            artist: "Bad Bunny",
+            image: song1,
+            duration: "3 min",
+            color: '#cdb598',
+            size: "10.1 MB",
+            date: "31/10/2023",
+            visibility: "100 M",
+            icon: "play_arrow"
+        },
+        {
+            title: "Nevermind",
+            artist: "Nirvana",
+            image: song2,
+            duration: "3 min",
+            color: '#1a749a', 
+            size: '3.04 MB',
+            date: '23/5/2000',
+            visibility: '400M',
+            icon: 'price_change'
+        },
+        {
+            title: "Sombras",
+            artist: "Zoe",
+            image: song3,
+            duration: "3 min",
+            color: '#6c3333',
+            size: "10.1 MB",
+            date: "31/10/2023",
+            visibility: "100 M",
+            icon: "music_note"
+        },
+        {
+            title: "Paparazzi",
+            artist: "Kim Dracula",
+            image: song4,
+            duration: "3 min",
+            color: '#523866',
+            size: "10.1 MB",
+            date: "31/10/2023",
+            visibility: "100 M",
+            icon: "skull"
+        },
+        {
+            title: "It's boy",
+            artist: "BBNO$",
+            image: song5,
+            duration: "3 min",
+            color: '#181212',
+            size: "10.1 MB",
+            date: "31/10/2023",
+            visibility: "100 M",
+            icon: "boy"
+        },
+        {
+            title: "Engravings",
+            artist: "Ethan Bortnick",
+            image: song6,
+            duration: "3 min",
+            color: '#2e5c20',
+            size: "10.1 MB",
+            date: "31/10/2023",
+            visibility: "100 M",
+            icon: "skeleton"
+        },
+        {
+            title: "Blablabla",
+            artist: "Maneskin",
+            image: blablabla,
+            duration: "4 min",
+            color: '#395646',
+            size: "10.1 MB",
+            date: "31/10/2023",
+            visibility: "100 M",
+            icon: "star"
+        }
     ];
+    const buttercup = songs.find(song => song.title === "Buttercup");
+    const Nevermind = songs.find(song => song.title === "Nevermind");
+
 
 
     return (
@@ -78,22 +171,37 @@ export const Home = () => {
                 <div className="page right active">
 
                     <div className="grid large-space">
-                        <BigCard
-                            image={chloe2}
-                            title="Buttercup - Chloe Moriondo"
-                            visibility="100 M"
-                            size="10.1 MB"
-                            date="31/10/2023"
-                            color="#e32f2f"
-                        />
-                        <BigCard
-                            image={song2}
-                            title="Nevermind - Nirvana"
-                            visibility="100 M"
-                            size="10.1 MB"
-                            date="31/10/2023"
-                            color="#4fd8ea"
-                        />
+                        
+                    {buttercup && (
+                            <BigCard
+                                image={buttercup.image}
+                                title={buttercup.title}
+                                visibility={buttercup.visibility}
+                                size={buttercup.size}
+                                date={buttercup.date}
+                                color={buttercup.color}
+                                updateColors={updateColors}
+                                redirectTo={'/player'} 
+                                artist={buttercup.artist}
+                                duration={buttercup.duration}
+                                // Otras propiedades según sea necesario
+                            />
+                        )}
+                    {Nevermind && (
+                            <BigCard
+                                image={Nevermind.image}
+                                title={Nevermind.title}
+                                visibility={Nevermind.visibility}
+                                size={Nevermind.size}
+                                date={Nevermind.date}
+                                color={Nevermind.color}
+                                updateColors={updateColors}
+                                redirectTo={'/player'} 
+                                artist={Nevermind.artist}
+                                duration={Nevermind.duration}
+                                // Otras propiedades según sea necesario
+                            />
+                        )}
                     </div>
                 </div>
 
@@ -111,6 +219,9 @@ export const Home = () => {
                             icon={song.icon} 
                             updateColors={updateColors}
                             redirectTo={'/player'} 
+                            
+                            artist={song.artist}
+                            duration={song.duration}
 
 
                         />

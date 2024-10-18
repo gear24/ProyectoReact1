@@ -1,14 +1,18 @@
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
 
+const MiniCard = ({ image, title, artist,duration, visibility, size, date, color, icon, updateColors, redirectTo }) => {
 
-const MiniCard = ({ image, title, visibility, size, date, color, icon, updateColors,redirectTo  }) => {
     const navigate = useNavigate(); // Crea la instancia
 
     const handleClick = () => {
-        updateColors(color); // Ahora updateColors estará definido
+        updateColors(color); // pa cambiar colores bonitos
         console.log("si se fue");
-        navigate(redirectTo); // Redirige a la página deseada
+        navigate(redirectTo, { state: { selectedSong: { image, title, artist, duration } } }); // Pasar la canción con datos predeterminados o reales
+
+
+        
+
 
     };
 
@@ -22,8 +26,8 @@ const MiniCard = ({ image, title, visibility, size, date, color, icon, updateCol
                             <h6>{title}</h6>
                             <div className="row no-margin">
                                 <label>{visibility}<i>{icon}</i></label>
-                                <label>{size}</label>
-                                <label>{date}</label>
+                                <label>{size} - {artist}</label>
+                                <label>{date}</label>                                
                             </div>
                         </div>
                     </div>
