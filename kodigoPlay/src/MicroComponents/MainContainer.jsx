@@ -15,6 +15,7 @@ const MainContainer = ({ children }) => {
   // Función para cerrar sesión
   const logout = () => {
     signOut(auth).then(() => {
+      alert("Sesion cerrada");
       setUser(null);
       navigate("/");
     }).catch((error) => {
@@ -35,7 +36,7 @@ const MainContainer = ({ children }) => {
           <header><img className="circle" src={KodigoMusic2} alt="Kodigo Music" /></header>
 
           <a href="#" onClick={(e) => { e.preventDefault(); goHome(); }}><i>home</i><label>Início</label></a>
-          <a href="#" onClick={(e) => { e.preventDefault(); setTypeForm('signup'); }}><i>explore</i><label>Explora</label></a>
+          <a><i>explore</i><label>Explora</label></a>
           <a><i>Category</i><label>Categorias</label></a>
 
           {user ? (
@@ -49,9 +50,17 @@ const MainContainer = ({ children }) => {
         </nav>
 
         <nav className="bottom s">
-          <a><i>home</i><label>Início</label></a>
+          <a href="#" onClick={(e) => { e.preventDefault(); goHome(); }}><i>home</i><label>Início</label></a>
           <a><i>explore</i><label>Explora</label></a>
           <a><i>Category</i><label>Categorias</label></a>
+          {user ? (
+            <a href="#" onClick={(e) => { e.preventDefault(); logout(); }}><i>logout</i><label>Cerrar sesión</label></a>
+          ) : (
+            <>
+              <a href="#" onClick={(e) => { e.preventDefault(); setTypeForm('signup'); }}><i>person</i><label>Crea tu cuenta</label></a>
+              <a href="#" onClick={(e) => { e.preventDefault(); setTypeForm('login'); }}><i>login</i><label>Ingresa</label></a>
+            </>
+          )}
         </nav>
 
         {/* Mostrar el formulario solo si se selecciona explícitamente */}
@@ -59,7 +68,12 @@ const MainContainer = ({ children }) => {
         {!user && typeForm === "signup" && <RegisterFormComponent />}
 
         {/* Mostrar el contenido solo si NO se ha seleccionado un formulario */}
-        {!typeForm && children}
+        {/* {!typeForm && children} */}
+        {user ? (
+            children // Solo mostrar el contenido si el usuario está autenticado
+            ) : (
+            !typeForm && children
+            )}
       </div>
 
   );
