@@ -156,6 +156,7 @@ export const Home = () => {
         }
     ];
     //Puede que sea una mala practica pero solo necesito 2
+    // Obtiene las canciones específicas para mostrar en el BigCard
     const buttercup = songs.find(song => song.title === "Buttercup");
     const Nevermind = songs.find(song => song.title === "Nevermind");
 
